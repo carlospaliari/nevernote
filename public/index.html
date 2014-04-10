@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>BlocoNotas</title>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+  <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <!-- navbar -->
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">
+          <span class="glyphicon glyphicon-cloud"></span>
+          NeverNote
+        </a>
+      </div>
+
+      <div class="col-lg-4 col-lg-offset-3 col-md-5 col-md-offset-2 col-sm-6 col-sm-offset-1">
+
+        <form class="navbar-form" method="get">
+          <div class="input-group">
+            <a href="/" class="input-group-addon btn">×</a>
+
+            <input type="text" name="busca" value="" class="form-control"
+                   required="required" placeholder="Buscar...">
+        <span class="input-group-btn">
+          <button type="submit" class="btn btn-default">Buscar</button>
+        </span>
+          </div>
+
+        </form>
+      </div>
+
+      <div class="navbar-right">
+
+        <div class="btn-group">
+          <button type="button" class="btn btn-default dropdown-toggle"
+                  data-toggle="dropdown">
+            <img class="img-circle"
+                 src="http://avatars3.githubusercontent.com/u/2741?s=34"
+                 width="34" height="34">
+            John Doe
+            <span class="caret"></span>
+          </button>
+
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-cog"></span>
+                Configurações
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-user"></span>
+                Perfil
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-lock"></span>
+                Alterar Senha
+              </a>
+            </li>
+            <li class="divider"></li>
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-log-out"></span>
+                Sair
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <!-- /navbar -->
+
+  <!-- flash message -->
+  <div class="row">
+    <div class="col-sm-4 col-sm-offset-4">
+      <div class="alert alert-success text-center fade in">
+        <button type="button" class="close" data-dismiss="alert"
+                aria-hidden="true">&times;</button>
+        Anotação Salva com Sucesso!
+      </div>
+    </div>
+  </div>
+  <!-- /flash message -->
+
+  <!-- row principal -->
+  <div class="row">
+    <div class="col-sm-2">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h2 class="panel-title">
+            Pastas
+          </h2>
+        </div>
+        <div class="panel-body">
+          <ul class="nav nav-pills nav-stacked">
+            <li class="active">
+              <a href="#">
+                <span class="glyphicon glyphicon-book"></span>
+                Gerais
+                <span class="badge pull-right">3</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-user"></span>
+                Pessoais
+                <span class="badge pull-right">7</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-tower"></span>
+                Faculdade
+                <span class="badge pull-right">1</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-5">
+
+      <!-- panel list -->
+      <div class="panel panel-info">
+        <div class="panel-heading">
+          <a href="#" class="btn btn-success pull-right">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+            Nova Nota
+          </a>
+          <h4>
+            Minhas Anotações
+            <span class="badge">2</span>
+          </h4>
+        </div>
+
+        <div class="list-group">
+          <a href="#" class="list-group-item">
+            Aula de Física
+            <span class="badge">17:12 21/05</span>
+          </a>
+
+          <a href="#" class="list-group-item active">
+            Palestra Sobre Rails
+            <span class="badge">08:45 02/05</span>
+          </a>
+        </div>
+      </div>
+      <!-- /panel list -->
+
+    </div>
+
+    <div class="col-sm-5">
+      <div class="well well-sm">
+
+        <!-- formulário -->
+        <form class="clearfix">
+          <div class="form-group">
+            <input type="text" class="form-control input-lg"
+                   placeholder="Título da anotação..." required="required">
+          </div>
+
+          <div class="form-group">
+            <textarea class="form-control input-lg" rows="15"
+                      required="required"
+                      placeholder="Digite sua anotação aqui..."></textarea>
+          </div>
+
+          <a class="btn btn-danger btn-xs pull-left" data-confirm="Tem Certeza?"
+             data-method="delete" href="#" rel="nofollow">
+            <span class="glyphicon glyphicon-trash"></span>
+            excluir
+          </a>
+
+          <button type="submit" class="btn btn-lg btn-primary pull-right">
+            Salvar
+          </button>
+
+        </form>
+        <!-- /formulário -->
+
+      </div>
+    </div>
+  </div>
+  <!-- /row principal -->
+
+</div>
+<!-- /container -->
+
+</body>
+</html>
