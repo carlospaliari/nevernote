@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+ <html>
 
 <head>
   <meta charset="UTF-8">
@@ -149,9 +149,9 @@
         </div>
 
         <div class="list-group">
-          <% for i in 1..3 %>
+          <% for note in @notes %>
             <a href="#" class="list-group-item">
-                Aula de Física
+                <%= note.titulo %>
                 <span class="badge">17:12 21/05</span>
             </a>
           <% end %>
