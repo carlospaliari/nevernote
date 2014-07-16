@@ -1,11 +1,23 @@
 class NotesController < ApplicationController
-  before_action :set_notes, [:index, :edit, :save]
+  before_action :set_notes, [:index, :save]
   def index
+    @note = Note.new
   end
 
   def edit
     @note = Note.find params[:id]
     render :index
+  end
+
+  def create
+    note = Note.new note_params
+    respond_to do |format|
+      if note.save!
+        format.html {redirect_to root_path}
+      else
+        format.html {flash[:notice] = 'Deu erro bonitao'}
+      end
+    end
   end
 
   def save
