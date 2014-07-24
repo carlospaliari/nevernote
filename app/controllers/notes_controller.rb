@@ -30,6 +30,11 @@ class NotesController < ApplicationController
     render :index
   end
 
+  def new
+    @note = Note.new
+    render :index
+  end
+
   private
   def set_notes
     @notes = Note.all
