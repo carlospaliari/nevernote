@@ -169,12 +169,12 @@
         <%= form_for @note, class: 'clearfix' do |f| %>
             <div class="field">
               <%= f.label :titulo %><br>
-              <%= f.text_field :titulo, class: 'form-control input-lg', autofocus: '' %>
+              <%= f.text_field :titulo, class: 'form-control input-lg', autofocus: '', required: true %>
             </div>
             <br>
             <div class="field">
               <%= f.label :texto %><br>
-              <%= f.text_area :texto, class: 'form-control input-lg' %>
+              <%= f.text_area :texto, class: 'form-control input-lg', required: true %>
             </div>
             <br>
             <div class="actions">
