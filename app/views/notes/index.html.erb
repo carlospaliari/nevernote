@@ -153,7 +153,7 @@
           <% for note in @notes %>
               <a href="<%= edit_note_path(note) %>" class="list-group-item">
                 <%= note.titulo %>
-                <span class="badge">14:53 23/05</span>
+                    <span class="badge"><%= l note.updated_at, format: :short %></span>
               </a>
           <% end %>
             </div>
