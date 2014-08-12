@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_notes, [:index, :save]
+  before_action :set_notes, [:index, :save, :destroy]
   def index
     @note = Note.new
   end
@@ -22,6 +22,11 @@ class NotesController < ApplicationController
 
   def save
     @notes = Note.all
+  end
+
+  def destroy
+    Note.destroy params[:id]
+    redirect_to notes_path
   end
 
   def update

@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <title>BlocoNotas</title>
   <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
-
-  
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
   <script src="//cdn.jsdelivr.net/jquery/2.1.0/jquery.min.js"></script>
   <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
 </head>
@@ -167,8 +167,10 @@
     <div class="col-sm-5">
       <div class="well well-sm">
 
+
+
         <!-- formulário -->
-        <%= form_for @note, class: 'clearfix' do |f| %>
+              <%= form_for @note, class: 'clearfix' do |f| %>
             <div class="field">
               <%= f.label :titulo %><br>
               <%= f.text_field :titulo, class: 'form-control input-lg', autofocus: '', required: true %>
@@ -185,7 +187,6 @@
             <div class="actions">
               <%= f.submit 'Excluir', class: 'btn btn-lg btn-danger pull-left' %>
             </div>
-
             <br><br><br>
 
         <% end %>
