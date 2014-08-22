@@ -44,3 +44,5 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 gem 'rails-i18n'
+
+gem 'autosize-rails', '~> 1.18.6'

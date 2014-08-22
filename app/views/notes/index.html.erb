@@ -147,7 +147,8 @@
           </a>
           <h4>
             Minhas Anotações
-            <span class="badge">2</span>
+            <a class="badge">2</a>
+
           </h4>
         </div>
 
@@ -167,8 +168,6 @@
     <div class="col-sm-5">
       <div class="well well-sm">
 
-
-
         <!-- formulário -->
               <%= form_for @note, class: 'clearfix' do |f| %>
             <div class="field">
@@ -178,19 +177,25 @@
             <br>
             <div class="field">
               <%= f.label :texto %><br>
-              <%= f.text_area :texto, class: 'form-control input-lg', required: true %>
+              <%= f.text_area :texto, class: 'form-control input-lg', id: 'sdmfghskuj', required: true %>
+
             </div>
             <br>
             <div class="actions">
               <%= f.submit 'Salvar', class: 'btn btn-lg btn-primary pull-right' %>
             </div>
-            <div class="actions">
-              <%= f.submit 'Excluir', class: 'btn btn-lg btn-danger pull-left' %>
-            </div>
+            <% unless @note.new_record? %>
+                <div class="actions">
+                  <a href="<%= note_path @note %>" data-method="delete" data-confirm="Tem Certeza que deseja excluir a nota <%= @note.titulo %>?" class="btn btn-danger btn-lg">
+                    Excluir
+                     </a>
+                </div>
+            <% end %>
+
             <br><br><br>
 
         <% end %>
-
+<%= @teste %>
         <!-- /formulário -->
 
       </div>

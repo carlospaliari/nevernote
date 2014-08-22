@@ -25,13 +25,16 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    Note.destroy params[:id]
+    note = Note.find params[:id]
+    note.destroy!
+    @teste = 'passou por aqui'
     redirect_to notes_path
   end
 
   def update
     @note = Note.find params[:id]
     @note.update(note_params)
+
     render :index
   end
 
