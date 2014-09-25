@@ -52,3 +52,5 @@ end
 gem 'rails-i18n'
 
 gem 'autosize-rails', '~> 1.18.6'
+
+gem 'slim-rails', '~> 2.1.4'
