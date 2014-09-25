@@ -12,7 +12,7 @@
     <div class="col-sm-2">
       <div class="panel panel-default">
         <div class="panel-heading">
-          <a href="<%=  %>" class="btn btn-success pull-right">
+          <a href="<%= %>" class="btn btn-success pull-right">
             <span class="glyphicon glyphicon-plus-sign"></span>
             Nova Pasta
           </a>
@@ -27,21 +27,21 @@
               <a href="<%=  %>">
                 <span class="glyphicon glyphicon-book"></span>
                 Gerais
-                <span class="badge pull-right">3</span>
+                <span class="badge pull-right"><%= @notes.length %></span>
               </a>
             </li>
             <li>
               <a href="<%= notes_path == Note.new %>">
                 <span class="glyphicon glyphicon-user"></span>
                 Pessoais
-                <span class="badge pull-right">7</span>
+                <span class="badge pull-right"><%= @notes.length %></span>
               </a>
             </li>
             <li>
               <a href="<%= notes_path == Note.new %>">
                 <span class="glyphicon glyphicon-tower"></span>
                 Faculdade
-                <span class="badge pull-right">1</span>
+                <span class="badge pull-right"><%= @notes.length %></span>
               </a>
             </li>
           </ul>
@@ -60,13 +60,13 @@
           </a>
           <h4>
             Minhas Anotações
-            <a class="badge"><%= 12 %></a>
+            <a class="badge"><%= @notes.length %></a>
 
           </h4>
         </div>
 
         <div class="list-group">
-          <% for note in @notes %>
+           <% for note in @notes %>
               <a href="<%= edit_note_path(note) %>" class="list-group-item">
                 <%= note.titulo %>
                 <span class="badge"><%= l note.updated_at, format: :short %></span>

@@ -45,7 +45,7 @@ class NotesController < ApplicationController
 
   private
   def set_notes
-    @notes = Note.all
+    @notes = Note.all.order(:created_at).reverse_order
   end
 
   def note_params
