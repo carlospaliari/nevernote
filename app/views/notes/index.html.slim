@@ -29,7 +29,7 @@
         .panel-heading
           a.btn.btn-success.pull-right href=new_note_path
             span.glyphicon.glyphicon-plus-sign
-              = ' Nova Nota'
+            = ' Nova Nota'
           h4
             = 'Minhas Anotaçoões '
             a.badge = @notes.length
@@ -37,14 +37,27 @@
         .list-group
           - @notes.each do |note|
             a.list-group-item href=edit_note_path(note)
-              - note.titulo
+              = note.titulo
               span.badge
-                - l note.updated_at, format: :short
+                = l note.updated_at, format: :short
     .col-sm-5
       .well.well-sm
-        - form_for @note, class: 'cleafix' do |f|
+        = form_for @note, class: 'cleafix' do |f|
           .field
-            - f.label :titulo
+            = f.label :titulo
             br
-            - f.text_field :titulo, class: 'form-control input-lg', autofocus: '', required: true
+            = f.text_field :titulo, class: 'form-control input-lg', autofocus: '', required: true
+            br
+            = f.label :texto
+            br
+            = f.text_area :texto, class: 'form-control input-lg',  required: true
+            br
+            .class.actions
+              = f.submit 'Salvar', class: 'btn btn-lg btn-primary pull-right'
+            - unless @note.new_record?
+              .actions
+                a.btn.btn-danger.btn-lg data-confirm=("Tem Certeza Que Deseja Excluir a Nota #{@note.titulo} ?") data-method="delete" href=(note_path @note)
+                  | Excluir
+            br
+            br
             br
