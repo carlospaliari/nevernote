@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_notes, only: [:index, :save, :destroy]
+  before_action :set_notes, [:index, :save, :destroy]
   def index
     @note = Note.new
   end
