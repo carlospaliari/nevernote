@@ -1,0 +1,44 @@
+nav.navbar.navbar-default role="navigation"
+  .container-fluid
+    .navbar-header
+      a.navbar-brand href="/"
+        span.glyphicon.glyphicon-cloud
+        =  ' NeverNote'
+    .col-lg-4.col-lg-offset-3.col-md-5.col-md-offset-2.col-sm-6.col-sm-offset-1
+      form.navbar-form method="get"
+        .input-group
+          a.input-group-addon.btn href="/vendor/assets/stylesheets"  ×
+          input.form-control name="busca" placeholder="Buscar..." required="required" type="text" value=""
+            span.input-group-btn
+              button.btn.btn-default type="submit"  Buscar
+    .navbar-right
+      .btn-group
+        button.btn.btn-default.dropdown-toggle data-toggle="dropdown" type="button"
+          img.img-circle height="34" src="http://avatars3.githubusercontent.com/u/2741?s=34" width="34"
+            = ' John Doe'
+            span.caret
+        ul.dropdown-menu
+          li
+            a href="#"
+              span.glyphicon.glyphicon-cog
+              | Configurações
+          li
+            a href="#"
+              span.glyphicon.glyphicon-user
+              | Perfil
+          li
+            a href="#"
+              span.glyphicon.glyphicon-lock
+              | Alterar Senha
+          li.divider
+          li
+            a href="#"
+              span.glyphicon.glyphicon-log-out
+              | Sair
+
+
+/.row
+  .col-sm-8.col-sm-offset-2
+    .alert.alert-success.text-center.fade.in
+      button.close aria-hidden="true" data-dismiss="alert" type="button"  &times;
+      | Anotação Salva com Sucesso! !
