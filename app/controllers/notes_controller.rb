@@ -1,5 +1,5 @@
 class NotesController < ApplicationController
-  before_action :set_notes, [:index, :save, :destroy]
+  before_action :set_notes, only: [:index, :edit, :update, :new, :create, :destroy]
   def index
     @note = Note.new
   end
@@ -18,10 +18,6 @@ class NotesController < ApplicationController
         format.html {flash[:notice] = 'Deu erro bonitao'}
       end
     end
-  end
-
-  def save
-    @notes = Note.all
   end
 
   def destroy
