@@ -3,7 +3,7 @@
     .col-sm-2
       .panel.panel-default
         .panel-heading
-          a.btn.btn-success.pull-right href=""
+          a.btn.btn-success.pull-right href="/"
             span.glyphicon.glyphicon-plus-sign
             = ' Nova Pasta'
           h2.panel-title
@@ -12,37 +12,30 @@
             br
         .panel-body
           ul.nav.nav-pills.nav-stacked
-            li.active
-              a href=""
-                span.glyphicon.glyphicon-book = ' Gerais'
-                span.badge.pull-right = @notes.length
-            li
-              a href=notes_path
-                span.glyphicon.glyphicon-user = ' Pessoais'
-                span.badge.pull-right = @notes.length
-            li
-              a href=notes_path
-                span.glyphicon.glyphicon-tower = ' Faculdade'
-                span.badge.pull-right = @notes.length
+            - @folders.each do |f|
+              li.active
+                a href=""
+                  span.glyphicon.glyphicon-book = " #{f.name}"
+                  span.badge.pull-right = f.notes.length
     .col-sm-5
       .panel.panel-info
         .panel-heading
-          a.btn.btn-success.pull-right href=new_note_path
+          a.btn.btn-success.pull-right href=new_folder_note_path(@folder)
             span.glyphicon.glyphicon-plus-sign
             = ' Nova Nota'
           h4
             = 'Minhas Anotaçoões '
-            a.badge = @notes.length
+            a.badge = @folder.notes.length
 
         .list-group
-          - @notes.each do |note|
-            a.list-group-item href=edit_note_path(note)
-              = note.titulo
+          - @folder.notes.each do |note|
+            a.list-group-item href=edit_folder_note_path(@folder, note)
+              = note
               span.badge
-                = l note.updated_at, format: :short
+                = note.updated_at
     .col-sm-5
       .well.well-sm
-        = form_for @note, class: 'cleafix' do |f|
+        = form_for [@folder, @note] do |f|
           .field
             = f.label :titulo
             br

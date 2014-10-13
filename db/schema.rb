@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140410181525) do
+ActiveRecord::Schema.define(version: 20141003180054) do
+
+  create_table "folders", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "notes", force: true do |t|
     t.string   "titulo"
     t.text     "texto"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "folder_id"
   end
+
+  add_index "notes", ["folder_id"], name: "index_notes_on_folder_id"
 
 end

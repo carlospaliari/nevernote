@@ -3,4 +3,7 @@
   <data-source source="LOCAL" name="Rails nevernote: development" uuid="2b34fc67-0d9a-45d9-8de4-5116ab15c54b">
     <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
   </data-source>
+  <data-source source="LOCAL" name="Rails nevernote: test" uuid="12d3f2e4-c3c0-4a5d-be5f-8f29d69724d9">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
 </component>

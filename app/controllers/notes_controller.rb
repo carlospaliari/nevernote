@@ -1,16 +1,18 @@
 class NotesController < ApplicationController
-  before_action :set_notes, only: [:index, :edit, :update, :new, :create, :destroy]
+  before_action :set_folder
+  before_action :set_notes
+
   def index
     @note = Note.new
   end
 
   def edit
-    @note = Note.find params[:id]
+    @note = scope.find params[:id]
     render :index
   end
 
   def create
-    note = Note.new note_params
+    note = scope.new note_params
     respond_to do |format|
       if note.save!
         format.html {redirect_to root_path}
@@ -21,27 +23,35 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    note = Note.find params[:id]
+    note = scope.find params[:id]
     note.destroy!
     @teste = 'passou por aqui'
     redirect_to notes_path
   end
 
   def update
-    @note = Note.find params[:id]
+    @note = scope.find params[:id]
     @note.update(note_params)
 
     render :index
   end
 
   def new
-    @note = Note.new
+    @note = scope.new
     render :index
   end
 
   private
   def set_notes
-    @notes = Note.all.order(:created_at).reverse_order
+    @notes = @folder.notes.order(:created_at).reverse_order
+  end
+
+  def set_folder
+    @folder = Folder.find(params[:folder_id])
+  end
+
+  def scope
+    @folder
   end
 
   def note_params
